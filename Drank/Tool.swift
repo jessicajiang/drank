@@ -12,8 +12,8 @@ import Foundation
 private let _ToolSharedInstance = Tool()
 private let _StandardUserDefaultsInstance = NSUserDefaults.standardUserDefaults()
 private let SESSION_NAME:String = "_drank_server_session"
-var SERVERNAME = "sl5.herokuapp.com"
-var SERVER = "http://sl5.herokuapp.com"
+var SERVERNAME = "drank_server.10.255.115.25.xip.io"
+var SERVER = "http://drank_server.10.255.115.25.xip.io"
 
 class Tool {
     class var sharedInstance: Tool {
