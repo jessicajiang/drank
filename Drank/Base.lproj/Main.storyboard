@@ -22,64 +22,161 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="HA2-jV-ezz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBX-ER-6ua">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgF-cb-Jly">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.90588241820000004" green="0.58823531870000001" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="CFG-ED-Mfg"/>
+                                    <constraint firstAttribute="height" constant="103" id="gun-4l-aze"/>
+                                </constraints>
+                                <state key="normal" image="Shot Glass (Sign Up)">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="232" y="398" width="85" height="91"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CFG-ED-Mfg"/>
+                                        <exclude reference="gun-4l-aze"/>
+                                    </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="loginPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eyp-BM-imX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgF-cb-Jly">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.90588241820000004" green="0.58823531870000001" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="72" y="398" width="87" height="91"/>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="CFG-ED-Mfg"/>
+                                        <include reference="gun-4l-aze"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <segue destination="WlD-UN-NdM" kind="show" id="QIu-b3-Znw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBX-ER-6ua">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="73I-tb-KBg"/>
+                                    <constraint firstAttribute="width" constant="95" id="A3a-xW-Qfs"/>
+                                </constraints>
+                                <state key="normal" image="Shot Glass (Login)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="73I-tb-KBg"/>
+                                        <exclude reference="A3a-xW-Qfs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="73I-tb-KBg"/>
+                                        <include reference="A3a-xW-Qfs"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="loginPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eyp-BM-imX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaP-tB-cFD">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="foB-qI-XEi"/>
+                                    <constraint firstAttribute="width" constant="82" id="hRh-cL-SGx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <color key="textColor" red="0.68797536380000002" green="0.346642801" blue="0.0061696748670000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="foB-qI-XEi"/>
+                                        <exclude reference="hRh-cL-SGx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="foB-qI-XEi"/>
+                                        <include reference="hRh-cL-SGx"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYu-Ut-f3i">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="2Lq-mE-Jun"/>
+                                    <constraint firstAttribute="height" constant="21" id="uFp-av-bIh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <color key="textColor" red="0.90588241815567017" green="0.5372549295425415" blue="0.32156863808631897" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2Lq-mE-Jun"/>
+                                        <exclude reference="uFp-av-bIh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="2Lq-mE-Jun"/>
+                                        <include reference="uFp-av-bIh"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NgF-cb-Jly" secondAttribute="bottom" constant="100" id="1fj-mN-XR7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VBX-ER-6ua" secondAttribute="bottom" constant="100" id="7Hn-UO-pd4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VBX-ER-6ua" secondAttribute="trailing" constant="50" id="8wr-9l-i6l"/>
+                            <constraint firstItem="VYu-Ut-f3i" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="65" id="EmZ-2m-IDJ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VYu-Ut-f3i" secondAttribute="bottom" constant="135" id="WsX-Ek-3H1"/>
                             <constraint firstItem="HA2-jV-ezz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="XDJ-7m-EbL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HA2-jV-ezz" secondAttribute="trailing" constant="-16" id="YCF-Gj-zYy"/>
                             <constraint firstAttribute="bottomMargin" secondItem="HA2-jV-ezz" secondAttribute="bottom" constant="-16" id="c6B-kz-uev"/>
                             <constraint firstItem="HA2-jV-ezz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="hlx-Y9-egn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CaP-tB-cFD" secondAttribute="trailing" constant="57" id="t1c-Kr-xJ5"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CaP-tB-cFD" secondAttribute="bottom" constant="116" id="xhG-CO-Mmy"/>
+                            <constraint firstItem="NgF-cb-Jly" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="xww-aV-IEM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="HA2-jV-ezz"/>
-                                <exclude reference="VBX-ER-6ua"/>
                                 <exclude reference="NgF-cb-Jly"/>
+                                <exclude reference="VBX-ER-6ua"/>
+                                <exclude reference="CaP-tB-cFD"/>
+                                <exclude reference="VYu-Ut-f3i"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="XDJ-7m-EbL"/>
                                 <exclude reference="YCF-Gj-zYy"/>
                                 <exclude reference="c6B-kz-uev"/>
                                 <exclude reference="hlx-Y9-egn"/>
+                                <exclude reference="xww-aV-IEM"/>
+                                <exclude reference="EmZ-2m-IDJ"/>
+                                <exclude reference="8wr-9l-i6l"/>
+                                <exclude reference="t1c-Kr-xJ5"/>
+                                <exclude reference="1fj-mN-XR7"/>
+                                <exclude reference="7Hn-UO-pd4"/>
+                                <exclude reference="WsX-Ek-3H1"/>
+                                <exclude reference="xhG-CO-Mmy"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="HA2-jV-ezz"/>
-                                <include reference="VBX-ER-6ua"/>
                                 <include reference="NgF-cb-Jly"/>
+                                <include reference="VBX-ER-6ua"/>
+                                <include reference="CaP-tB-cFD"/>
+                                <include reference="VYu-Ut-f3i"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="XDJ-7m-EbL"/>
                                 <include reference="YCF-Gj-zYy"/>
                                 <include reference="c6B-kz-uev"/>
                                 <include reference="hlx-Y9-egn"/>
+                                <include reference="xww-aV-IEM"/>
+                                <include reference="EmZ-2m-IDJ"/>
+                                <include reference="8wr-9l-i6l"/>
+                                <include reference="t1c-Kr-xJ5"/>
+                                <include reference="1fj-mN-XR7"/>
+                                <include reference="7Hn-UO-pd4"/>
+                                <include reference="WsX-Ek-3H1"/>
+                                <include reference="xhG-CO-Mmy"/>
                             </mask>
                         </variation>
                     </view>
@@ -962,6 +1059,8 @@
         <image name="Clear" width="14" height="14"/>
         <image name="Login" width="375" height="667"/>
         <image name="Recipes" width="146" height="42"/>
+        <image name="Shot Glass (Login)" width="95" height="103"/>
+        <image name="Shot Glass (Sign Up)" width="95" height="103"/>
         <image name="bg" width="375" height="667"/>
         <image name="bg-1" width="375" height="667"/>
         <image name="gold bokeh" width="700" height="455"/>
