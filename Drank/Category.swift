@@ -18,4 +18,65 @@ class Category : NSObject, JSONObject {
         self.id = json.stringValue("id")
         self.subscribed = json.boolValue("subscribed")
     }
+    
+    /**
+    In Completion
+    Returns nil if error
+    Returns array of Category when successful
+    */
+    static func getList(completionHandler: (([Category]?) -> Void)) {
+        let url:String = SERVER + "/categories/list.json"
+        Tool.callREST(nil, url: url, method: "GET") { (response) -> Void in
+            if let json = response as? NSDictionary, categories = json["categories"] as? [NSDictionary] {
+                var newCategories:[Category] = []
+                for categoryJson in categories {
+                    newCategories.append(Category(json: categoryJson))
+                }
+                completionHandler(newCategories)
+            } else {
+                println("ERROR: GET CATEGORIES LIST")
+                completionHandler(nil)
+            }
+        }
+    }
+
+    /**
+    In Completion
+    Returns nil if error
+    Returns array of Category when successful
+    */
+    static func getSubscribed(completionHandler: (([Category]?) -> Void)) {
+        let url:String = SERVER + "/categories/subscribed.json"
+        Tool.callREST(nil, url: url, method: "GET") { (response) -> Void in
+            if let json = response as? NSDictionary, categories = json["categories"] as? [NSDictionary] {
+                var newCategories:[Category] = []
+                for categoryJson in categories {
+                    newCategories.append(Category(json: categoryJson))
+                }
+                completionHandler(newCategories)
+            } else {
+                println("ERROR: GET CATEGORIES SUBSCRIBED")
+                completionHandler(nil)
+            }
+        }
+    }
+
+    /**
+    In Completion
+    Returns false if error
+    Returns true if successful
+    */
+    static func putSubscribe(category_id:String, completionHandler: ((Bool) -> Void)) {
+        let url:String = SERVER + "/categories/subscribe.json"
+        var inputDict:NSMutableDictionary = NSMutableDictionary()
+        inputDict["category_id"] = category_id
+        Tool.callREST(inputDict, url: url, method: "PUT") { (response) -> Void in
+            if let json = response as? NSDictionary where json.stringValue("status") == "success" {
+                completionHandler(true)
+            } else {
+                completionHandler(false)
+                println("ERROR: GET CATEGORIES LIST")
+            }
+        }
+    }
 }
