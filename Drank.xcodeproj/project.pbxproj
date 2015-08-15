@@ -54,7 +54,7 @@
 		3B9C7E5C1B7D965C00E01BA7 /* DrankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrankTests.swift; sourceTree = "<group>"; };
 		3B9C7E961B7DD22200E01BA7 /* CollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
 		3B9C7E9A1B7DD91D00E01BA7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		3BBA23ED1B7F2B19004D41DF /* SearchBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchBarViewController.swift; path = ../../../.Trash/SearchBarViewController.swift; sourceTree = "<group>"; };
+		3BBA23ED1B7F2B19004D41DF /* SearchBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
