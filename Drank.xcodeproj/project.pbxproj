@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0D30A51B7F07B2006E4FC0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D30A41B7F07B2006E4FC0 /* Extension.swift */; };
+		3B0D30A71B7F09C8006E4FC0 /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D30A61B7F09C8006E4FC0 /* SearchBarViewController.swift */; };
+		3B0D30A91B7F09EB006E4FC0 /* MostPopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D30A81B7F09EB006E4FC0 /* MostPopularViewController.swift */; };
+		3B0D30AB1B7F0A1B006E4FC0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D30AA1B7F0A1B006E4FC0 /* ProfileViewController.swift */; };
 		3B9C7E441B7D965C00E01BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E431B7D965C00E01BA7 /* AppDelegate.swift */; };
 		3B9C7E471B7D965C00E01BA7 /* Drank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E451B7D965C00E01BA7 /* Drank.xcdatamodeld */; };
 		3B9C7E491B7D965C00E01BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E481B7D965C00E01BA7 /* ViewController.swift */; };
@@ -14,6 +18,8 @@
 		3B9C7E4E1B7D965C00E01BA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B9C7E4D1B7D965C00E01BA7 /* Images.xcassets */; };
 		3B9C7E511B7D965C00E01BA7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9C7E4F1B7D965C00E01BA7 /* LaunchScreen.xib */; };
 		3B9C7E5D1B7D965C00E01BA7 /* DrankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E5C1B7D965C00E01BA7 /* DrankTests.swift */; };
+		3B9C7E971B7DD22300E01BA7 /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E961B7DD22200E01BA7 /* CollectionController.swift */; };
+		3B9C7E9B1B7DD91D00E01BA7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E9A1B7DD91D00E01BA7 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B0D30A41B7F07B2006E4FC0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		3B0D30A61B7F09C8006E4FC0 /* SearchBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchBarViewController.swift; path = ../SearchBarViewController.swift; sourceTree = "<group>"; };
+		3B0D30A81B7F09EB006E4FC0 /* MostPopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostPopularViewController.swift; sourceTree = "<group>"; };
+		3B0D30AA1B7F0A1B006E4FC0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3B9C7E3E1B7D965C00E01BA7 /* Drank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9C7E421B7D965C00E01BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B9C7E431B7D965C00E01BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +48,8 @@
 		3B9C7E561B7D965C00E01BA7 /* DrankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9C7E5B1B7D965C00E01BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B9C7E5C1B7D965C00E01BA7 /* DrankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrankTests.swift; sourceTree = "<group>"; };
+		3B9C7E961B7DD22200E01BA7 /* CollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
+		3B9C7E9A1B7DD91D00E01BA7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +92,14 @@
 			isa = PBXGroup;
 			children = (
 				3B9C7E431B7D965C00E01BA7 /* AppDelegate.swift */,
+				3B0D30A61B7F09C8006E4FC0 /* SearchBarViewController.swift */,
+				3B0D30A81B7F09EB006E4FC0 /* MostPopularViewController.swift */,
 				3B9C7E481B7D965C00E01BA7 /* ViewController.swift */,
+				3B9C7E961B7DD22200E01BA7 /* CollectionController.swift */,
 				3B9C7E4A1B7D965C00E01BA7 /* Main.storyboard */,
+				3B0D30A41B7F07B2006E4FC0 /* Extension.swift */,
+				3B9C7E9A1B7DD91D00E01BA7 /* TabBarController.swift */,
+				3B0D30AA1B7F0A1B006E4FC0 /* ProfileViewController.swift */,
 				3B9C7E4D1B7D965C00E01BA7 /* Images.xcassets */,
 				3B9C7E4F1B7D965C00E01BA7 /* LaunchScreen.xib */,
 				3B9C7E451B7D965C00E01BA7 /* Drank.xcdatamodeld */,
@@ -215,9 +233,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0D30A71B7F09C8006E4FC0 /* SearchBarViewController.swift in Sources */,
 				3B9C7E491B7D965C00E01BA7 /* ViewController.swift in Sources */,
+				3B9C7E971B7DD22300E01BA7 /* CollectionController.swift in Sources */,
+				3B0D30A51B7F07B2006E4FC0 /* Extension.swift in Sources */,
 				3B9C7E471B7D965C00E01BA7 /* Drank.xcdatamodeld in Sources */,
+				3B9C7E9B1B7DD91D00E01BA7 /* TabBarController.swift in Sources */,
+				3B0D30AB1B7F0A1B006E4FC0 /* ProfileViewController.swift in Sources */,
 				3B9C7E441B7D965C00E01BA7 /* AppDelegate.swift in Sources */,
+				3B0D30A91B7F09EB006E4FC0 /* MostPopularViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +437,7 @@
 				3B9C7E621B7D965C00E01BA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B9C7E631B7D965C00E01BA7 /* Build configuration list for PBXNativeTarget "DrankTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +446,7 @@
 				3B9C7E651B7D965C00E01BA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
