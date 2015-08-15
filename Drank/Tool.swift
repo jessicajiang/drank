@@ -31,8 +31,6 @@ class Tool {
             var err: NSError?
             request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params!, options: nil, error: &err)
         }
-        let vnum:String = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
-        request.addValue("iphone-\(vnum)", forHTTPHeaderField: "Referer")
         var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             var jsonerr: NSError?
             var json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves, error: &jsonerr)
@@ -52,35 +50,38 @@ class Tool {
     class func userDefaults() -> NSUserDefaults {
         return _StandardUserDefaultsInstance
     }
+}
+
+func setUpCookie() -> Bool {
+    let userProfile = Tool.userDefaults()
+    var cookieProperties:NSMutableDictionary = NSMutableDictionary()
+    cookieProperties[NSHTTPCookieDomain] = SERVERNAME
+    cookieProperties[NSHTTPCookiePath] = "/"
+    if(userProfile.stringForKey(SESSION_NAME) != nil){
+        cookieProperties[NSHTTPCookieValue] = userProfile.stringForKey(SESSION_NAME)
+        cookieProperties[NSHTTPCookieName] = SESSION_NAME
+        if let cookie:NSHTTPCookie = NSHTTPCookie(properties: cookieProperties as [NSObject : AnyObject]) {
+            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(cookie)
+        }
+        return true
+    } else {
+        return false
+    }
+}
+
+func saveCookies() {
+    var storage:NSHTTPCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
     
-    class func setUpCookie(){
-        let userProfile = Tool.userDefaults()
-        var cookieProperties:NSMutableDictionary = NSMutableDictionary()
-        cookieProperties[NSHTTPCookieDomain] = SERVERNAME
-        cookieProperties[NSHTTPCookiePath] = "/"
-        if(userProfile.stringForKey(SESSION_NAME) != nil){
-            cookieProperties[NSHTTPCookieValue] = userProfile.stringForKey(SESSION_NAME)
-            cookieProperties[NSHTTPCookieName] = SESSION_NAME
-            if let cookie:NSHTTPCookie = NSHTTPCookie(properties: cookieProperties as [NSObject : AnyObject]) {
-                NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(cookie)
-            }
+    var cookieArray:NSArray = storage.cookies!
+    
+    let userProfile = Tool.userDefaults()
+    
+    for cookie in cookieArray{
+        if(cookie.name == SESSION_NAME){
+            userProfile.setObject((cookie as! NSHTTPCookie).value!, forKey: SESSION_NAME)
         }
     }
-    
-    func saveCookies() {
-        var storage:NSHTTPCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-        
-        var cookieArray:NSArray = storage.cookies!
-        
-        let userProfile = Tool.userDefaults()
-        
-        for cookie in cookieArray{
-            if(cookie.name == SESSION_NAME){
-                userProfile.setObject((cookie as! NSHTTPCookie).value!, forKey: SESSION_NAME)
-            }
-        }
-        Tool.userDefaults().synchronize()
-    }
+    Tool.userDefaults().synchronize()
 }
 
 func clearCookies(){

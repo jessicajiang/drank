@@ -17,7 +17,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         let newFBButton = FBSDKLoginButton()
         newFBButton.delegate = self
         fbButton = newFBButton
-        
+        checkLoginStatus()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -34,10 +34,34 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
     
         println(result.token.userID)
+        login(result.token.userID)
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("logout")
+    }
+    
+    func checkLoginStatus(){
+        if setUpCookie() {
+            println("logged in")
+        } else {
+            println("logged out")
+        }
+    }
+}
+
+//Server Related
+extension ViewController {
+    func login(fbid:String){
+        let url:String = SERVER + "/login.json?fbid=" + fbid
+        Tool.callREST(nil, url: url, method: "POST") { (response) -> Void in
+            if let json = response as? NSDictionary {
+                saveCookies()
+                println("login success")
+            } else {
+                println("login failed")
+            }
+        }
     }
 }
 
