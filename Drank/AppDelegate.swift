@@ -22,12 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if setUpCookie() {
             var storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("ViewController") as! UIViewController
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UIViewController
             self.window?.rootViewController = initialViewController
-            
         } else {
             var storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UIViewController
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("ViewController") as! UIViewController
             self.window?.rootViewController = initialViewController
         }
         
