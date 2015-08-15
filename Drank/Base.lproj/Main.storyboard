@@ -33,18 +33,31 @@
                                     <segue destination="WlD-UN-NdM" kind="show" id="QIu-b3-Znw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBX-ER-6ua">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="232" y="389" width="85" height="91"/>
+                                </variation>
+                                <connections>
+                                    <action selector="loginPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eyp-BM-imX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HA2-jV-ezz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="XDJ-7m-EbL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HA2-jV-ezz" secondAttribute="trailing" constant="-16" id="YCF-Gj-zYy"/>
                             <constraint firstAttribute="bottomMargin" secondItem="HA2-jV-ezz" secondAttribute="bottom" constant="-16" id="c6B-kz-uev"/>
-                            <constraint firstItem="HA2-jV-ezz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-16" id="hlx-Y9-egn"/>
+                            <constraint firstItem="HA2-jV-ezz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="hlx-Y9-egn"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="HA2-jV-ezz"/>
                                 <exclude reference="NgF-cb-Jly"/>
+                                <exclude reference="VBX-ER-6ua"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="XDJ-7m-EbL"/>
@@ -57,6 +70,7 @@
                             <mask key="subviews">
                                 <include reference="HA2-jV-ezz"/>
                                 <include reference="NgF-cb-Jly"/>
+                                <include reference="VBX-ER-6ua"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="XDJ-7m-EbL"/>
