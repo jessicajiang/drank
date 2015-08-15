@@ -33,7 +33,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
     
-        println(result)
+        println(result.token.userID)
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
