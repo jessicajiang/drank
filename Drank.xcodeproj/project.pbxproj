@@ -24,6 +24,8 @@
 		3BBA23EE1B7F2B19004D41DF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3BBA23F01B7F8905004D41DF /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA23EF1B7F8905004D41DF /* CollectionCell.swift */; };
 		62FD762D1B7F2FE4007950AB /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FD762C1B7F2FE4007950AB /* Tool.swift */; };
+		62FD76301B7F8B4F007950AB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FD762F1B7F8B4F007950AB /* Category.swift */; };
+		62FD76321B7F8B97007950AB /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FD76311B7F8B97007950AB /* JSONObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		3B9C7E9A1B7DD91D00E01BA7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3BBA23EF1B7F8905004D41DF /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		62FD762C1B7F2FE4007950AB /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tool.swift; path = ../../Drank/Drank/Tool.swift; sourceTree = "<group>"; };
+		62FD762F1B7F8B4F007950AB /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../../Drank/Drank/Category.swift; sourceTree = "<group>"; };
+		62FD76311B7F8B97007950AB /* JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONObject.swift; path = ../../Drank/Drank/JSONObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 		62FD762E1B7F8AED007950AB /* DataObjects */ = {
 			isa = PBXGroup;
 			children = (
+				62FD762F1B7F8B4F007950AB /* Category.swift */,
+				62FD76311B7F8B97007950AB /* JSONObject.swift */,
 			);
 			name = DataObjects;
 			sourceTree = "<group>";
@@ -263,10 +269,12 @@
 				3B9C7E471B7D965C00E01BA7 /* Drank.xcdatamodeld in Sources */,
 				3B9C7E9B1B7DD91D00E01BA7 /* TabBarController.swift in Sources */,
 				3BBA23EE1B7F2B19004D41DF /* (null) in Sources */,
+				62FD76321B7F8B97007950AB /* JSONObject.swift in Sources */,
 				3B0D30AB1B7F0A1B006E4FC0 /* ProfileViewController.swift in Sources */,
 				3B9C7E441B7D965C00E01BA7 /* AppDelegate.swift in Sources */,
 				3BBA23F01B7F8905004D41DF /* CollectionCell.swift in Sources */,
 				3B0D30A91B7F09EB006E4FC0 /* MostPopularViewController.swift in Sources */,
+				62FD76301B7F8B4F007950AB /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
