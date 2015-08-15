@@ -10,7 +10,7 @@
         <!--Login-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" userLabel="Login" customClass="ViewController" customModule="Drank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" title="Login" id="vXZ-lx-hvc" userLabel="Login" customClass="ViewController" customModule="Drank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -547,37 +547,42 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.39999999999999963" height="0.39999999999999963"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.89999999999999991" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-Kg-qDu">
+                            <imageView userInteractionEnabled="NO" alpha="0.89999999999999991" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-Kg-qDu">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2LY-Kg-qDu" secondAttribute="height" multiplier="1:1" id="ESe-vX-9FS"/>
                                     <constraint firstAttribute="width" secondItem="2LY-Kg-qDu" secondAttribute="height" multiplier="400:81" id="McO-Jy-fP8"/>
+                                    <constraint firstAttribute="width" constant="235" id="TVA-He-qWG"/>
                                     <constraint firstAttribute="width" constant="400" id="XfQ-JU-ZW6"/>
                                     <constraint firstAttribute="height" constant="251" id="gQy-vv-mGh"/>
+                                    <constraint firstAttribute="width" secondItem="2LY-Kg-qDu" secondAttribute="height" multiplier="235:251" id="r86-3r-UuU"/>
                                     <constraint firstAttribute="width" constant="250" id="wng-RR-2WG"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ESe-vX-9FS"/>
                                         <exclude reference="McO-Jy-fP8"/>
+                                        <exclude reference="TVA-He-qWG"/>
                                         <exclude reference="XfQ-JU-ZW6"/>
                                         <exclude reference="gQy-vv-mGh"/>
+                                        <exclude reference="r86-3r-UuU"/>
                                         <exclude reference="wng-RR-2WG"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="83" y="152" width="235" height="251"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="ESe-vX-9FS"/>
                                         <exclude reference="McO-Jy-fP8"/>
+                                        <include reference="TVA-He-qWG"/>
                                         <exclude reference="XfQ-JU-ZW6"/>
                                         <include reference="gQy-vv-mGh"/>
+                                        <include reference="r86-3r-UuU"/>
                                         <exclude reference="wng-RR-2WG"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="434-Y1-DMg" appends="YES" id="4zu-VV-ZXd"/>
+                                    <outletCollection property="gestureRecognizers" destination="p0D-h0-Vri" appends="YES" id="UNa-FV-8oV"/>
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0l-X3-NUb">
@@ -708,9 +713,9 @@
                     <navigationItem key="navigationItem" title="Drink" id="F1P-Vj-P04"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYM-RC-aYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="434-Y1-DMg">
+                <tapGestureRecognizer id="p0D-h0-Vri">
                     <connections>
-                        <segue destination="ilb-JM-Dl4" kind="push" id="wz5-nI-jZa"/>
+                        <segue destination="ilb-JM-Dl4" kind="presentation" id="c7r-BP-io8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -785,10 +790,10 @@
             </objects>
             <point key="canvasLocation" x="6286.5" y="38"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Controller-->
         <scene sceneID="k8t-7L-pgc">
             <objects>
-                <tabBarController id="WlD-UN-NdM" customClass="TabBarController" customModule="Drank" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="Tab Bar Controller" id="WlD-UN-NdM" userLabel="Tab Controller" customClass="TabBarController" customModule="Drank" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="eRe-g8-AgU"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="phT-dk-aOR">
@@ -1047,7 +1052,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MQL-BX-eCo" kind="push" id="MrH-ZH-71B"/>
+                        <segue destination="MQL-BX-eCo" kind="presentation" id="CaR-Zt-VNb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xtg-7V-nwY" userLabel="First Responder" sceneMemberID="firstResponder"/>

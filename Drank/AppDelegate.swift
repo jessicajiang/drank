@@ -17,11 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        /*FBSDKLoginButton.class
-        ...
-        return */
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        if setUpCookie() {
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("ViewController") as! UIViewController
+            self.window?.rootViewController = initialViewController
+            
+        } else {
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UIViewController
+            self.window?.rootViewController = initialViewController
+        }
+        
+        self.window?.makeKeyAndVisible()
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
@@ -117,20 +130,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    /*
-    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-    didFinishLaunchingWithOptions:launchOptions];
-    }
-    
-    - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-    openURL:url
-    sourceApplication:sourceApplication
-    annotation:annotation
-    ];
-    }
-*/
 
 }
 
