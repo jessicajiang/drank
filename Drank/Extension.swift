@@ -14,6 +14,13 @@ extension UIView {
         self.clipsToBounds = true
         self.layer.cornerRadius = self.frame.width/2.0
     }
+    
+    func createBorder(radius:CGFloat, color:UIColor, width:CGFloat) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        self.layer.borderColor = color.CGColor
+        self.layer.borderWidth = width
+    }
 }
 
 var imageCache:NSCache = NSCache()
