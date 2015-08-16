@@ -24,8 +24,8 @@ class Bar : NSObject, JSONObject {
             self.isOpened = openingHours.boolValue("open_now")
         }
         if let geometry = json["geometry"] as? NSDictionary, location = geometry["location"] as? NSDictionary {
-            self.longitude = location["lat"] as? CGFloat ?? 0
-            self.latitude = location["lng"] as? CGFloat ?? 0
+            self.longitude = location["lng"] as? CGFloat ?? 0
+            self.latitude = location["lat"] as? CGFloat ?? 0
         }
         self.icon_url = json.stringValue("icon")
         if let photos = json["photos"] as? [NSDictionary], photo = photos.first {
@@ -60,7 +60,7 @@ class Bar : NSObject, JSONObject {
     
     func openMaps(){
         var options:[NSObject : AnyObject] = NSDictionary() as [NSObject : AnyObject]
-        let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.latitude))
+        let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude))
         var pm = MKPlacemark(coordinate: location, addressDictionary: nil)
         var mapItem = MKMapItem(placemark: pm)
         mapItem.name = self.name
