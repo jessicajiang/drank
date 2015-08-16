@@ -75,7 +75,25 @@ class Category : NSObject, JSONObject {
                 completionHandler(true)
             } else {
                 completionHandler(false)
-                println("ERROR: GET CATEGORIES LIST")
+                println("ERROR: PUT CATEGORIES SUBSCRIBE")
+            }
+        }
+    }
+
+    /**
+    In Completion
+    Returns nil if error
+    Returns Drink Object if successful
+    */
+    static func getDrinkRecommendation(category_id:String, completionHandler: ((Drink?) -> Void)) {
+        let url:String = SERVER + "/categories/recommend_drink.json?category_id=" + category_id
+        Tool.callREST(nil, url: url, method: "GET") { (response) -> Void in
+            if let json = response as? NSDictionary, drinkJson = json["drink"] as? NSDictionary {
+                let drink = Drink(json:drinkJson)
+                completionHandler(drink)
+            } else {
+                completionHandler(nil)
+                println("ERROR: GET CATEGORIES RECOMMEND DRINK")
             }
         }
     }
