@@ -17,6 +17,7 @@ class SearchBarViewController: UIViewController {
     var bars:[Bar] = [] {
         didSet {
             println(bars.count)
+            barTableView.reloadData()
         }
     }
     
@@ -90,10 +91,12 @@ extension SearchBarViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier(
-                "DiscussionCell",
-                forIndexPath: indexPath) as! UITableViewCell
-            
+            var cell:BarCellTableViewCell = tableView.dequeueReusableCellWithIdentifier(
+                "barCell",
+                forIndexPath: indexPath) as! BarCellTableViewCell
+            let bar = bars[indexPath.row]
+            cell.barNameLabel.text = bar.name
+            cell.barImageView.smartLoad(bar.barPhotoURL())
             return cell
     }
 }

@@ -14,6 +14,7 @@ class Bar : NSObject, JSONObject {
     var longitude:CGFloat = 0
     var latitude:CGFloat = 0
     var icon_url:String = ""
+    var photoRef:String = ""
     
     required init(json:NSDictionary){
         self.name = json.stringValue("name")
@@ -25,6 +26,9 @@ class Bar : NSObject, JSONObject {
             self.latitude = location["lng"] as? CGFloat ?? 0
         }
         self.icon_url = json.stringValue("icon")
+        if let photos = json["photos"] as? [NSDictionary], photo = photos.first {
+            self.photoRef = photo.stringValue("photo_reference")
+        }
     }
     
     class func getBars(latitude:CGFloat, longitude:CGFloat, completionHandler: (([Bar]?) -> Void)) {
@@ -40,6 +44,15 @@ class Bar : NSObject, JSONObject {
             } else {
                 completionHandler(nil)
             }
+        }
+    }
+    
+    func barPhotoURL() -> String {
+        if count(self.photoRef) > 0 {
+            let photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(self.photoRef)&sensor=false&key=AIzaSyClmfaOWfPTif6uSc4TWMMyoyCmesXGJFw"
+            return photoURL
+        } else {
+            return ""
         }
     }
 }
