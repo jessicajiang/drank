@@ -11,6 +11,7 @@ import CoreLocation
 
 class SearchBarViewController: UIViewController {
     
+    @IBOutlet weak var barTableView: UITableView!
     var locationManager:CLLocationManager!
     
     var bars:[Bar] = [] {

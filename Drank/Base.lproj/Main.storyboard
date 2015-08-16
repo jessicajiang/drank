@@ -298,6 +298,9 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="ka9-pq-6Ws"/>
                     <navigationItem key="navigationItem" title="Search" id="Tpy-Lb-f4p"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="barTableView" destination="FGh-CK-fHQ" id="r4G-oc-qvA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3v-Li-PPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
