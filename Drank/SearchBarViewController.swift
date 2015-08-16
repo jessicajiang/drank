@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SearchBarViewController: UIViewController {
-
+    
+    var locationManager:CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Do any additional setup after loading the view, typically from a nib.
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +44,14 @@ class SearchBarViewController: UIViewController {
     }
     */
 
+}
+
+extension SearchBarViewController : CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+
+    }
 }

@@ -27,6 +27,8 @@
 		3BBA23F01B7F8905004D41DF /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA23EF1B7F8905004D41DF /* CollectionCell.swift */; };
 		62A810121B800C9D00F354E3 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A810111B800C9D00F354E3 /* Drink.swift */; };
 		62A810141B800CAA00F354E3 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A810131B800CAA00F354E3 /* Ingredient.swift */; };
+		62A810161B8045D000F354E3 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A810151B8045D000F354E3 /* Bar.swift */; };
+		62A810181B80514800F354E3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A810171B80514700F354E3 /* CoreLocation.framework */; };
 		62FD762D1B7F2FE4007950AB /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FD762C1B7F2FE4007950AB /* Tool.swift */; };
 		62FD76301B7F8B4F007950AB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FD762F1B7F8B4F007950AB /* Category.swift */; };
 		62FD76321B7F8B97007950AB /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FD76311B7F8B97007950AB /* JSONObject.swift */; };
@@ -67,6 +69,8 @@
 		3BBA23EF1B7F8905004D41DF /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		62A810111B800C9D00F354E3 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		62A810131B800CAA00F354E3 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		62A810151B8045D000F354E3 /* Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		62A810171B80514700F354E3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		62FD762C1B7F2FE4007950AB /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tool.swift; path = ../../Drank/Drank/Tool.swift; sourceTree = "<group>"; };
 		62FD762F1B7F8B4F007950AB /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../../Drank/Drank/Category.swift; sourceTree = "<group>"; };
 		62FD76311B7F8B97007950AB /* JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONObject.swift; path = ../../Drank/Drank/JSONObject.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A810181B80514800F354E3 /* CoreLocation.framework in Frameworks */,
 				3B0D30B21B7F20CE006E4FC0 /* FBSDKLoginKit.framework in Frameworks */,
 				3B0D30AF1B7F0F41006E4FC0 /* FBSDKCoreKit.framework in Frameworks */,
 			);
@@ -95,6 +100,7 @@
 		3B9C7E351B7D965C00E01BA7 = {
 			isa = PBXGroup;
 			children = (
+				62A810171B80514700F354E3 /* CoreLocation.framework */,
 				3B9C7E401B7D965C00E01BA7 /* Drank */,
 				3B9C7E591B7D965C00E01BA7 /* DrankTests */,
 				3B9C7E3F1B7D965C00E01BA7 /* Products */,
@@ -168,6 +174,7 @@
 				62FD762F1B7F8B4F007950AB /* Category.swift */,
 				62A810111B800C9D00F354E3 /* Drink.swift */,
 				62A810131B800CAA00F354E3 /* Ingredient.swift */,
+				62A810151B8045D000F354E3 /* Bar.swift */,
 				62FD76311B7F8B97007950AB /* JSONObject.swift */,
 			);
 			name = DataObjects;
@@ -281,6 +288,7 @@
 				3B9C7E471B7D965C00E01BA7 /* Drank.xcdatamodeld in Sources */,
 				3B9C7E9B1B7DD91D00E01BA7 /* TabBarController.swift in Sources */,
 				62A810141B800CAA00F354E3 /* Ingredient.swift in Sources */,
+				62A810161B8045D000F354E3 /* Bar.swift in Sources */,
 				3BBA23EE1B7F2B19004D41DF /* (null) in Sources */,
 				62FD76321B7F8B97007950AB /* JSONObject.swift in Sources */,
 				3B95933C1B7FE04900282EFA /* SubscriptionViewController.swift in Sources */,
