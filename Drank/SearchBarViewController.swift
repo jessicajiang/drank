@@ -13,19 +13,39 @@ class SearchBarViewController: UIViewController {
     
     var locationManager:CLLocationManager!
     
+    var bars:[Bar] = [] {
+        didSet {
+            println(bars.count)
+        }
+    }
+    
+    var currentLocation:CLLocation? {
+        didSet {
+            if let currentLocation = currentLocation {
+                let longitude = CGFloat(currentLocation.coordinate.longitude)
+                let latitude = CGFloat(currentLocation.coordinate.latitude)
+                Bar.getBars(latitude, longitude: longitude) { (newBars) -> Void in
+                    if let newBars = newBars {
+                        self.bars = newBars
+                    } else {
+                        println("error")
+                    }
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // Do any additional setup after loading the view.
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,10 +68,7 @@ class SearchBarViewController: UIViewController {
 
 extension SearchBarViewController : CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-
+        manager.stopUpdatingLocation()
+        currentLocation = manager.location
     }
 }

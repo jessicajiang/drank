@@ -28,7 +28,7 @@ class Bar : NSObject, JSONObject {
     }
     
     class func getBars(latitude:CGFloat, longitude:CGFloat, completionHandler: (([Bar]?) -> Void)) {
-        let url:String = "https://maps.googleapis.com/maps/api/place/search/json?radius=100&key=AIzaSyClmfaOWfPTif6uSc4TWMMyoyCmesXGJFw&keyword=bar&location=\(latitude),\(longitude)"
+        let url:String = "https://maps.googleapis.com/maps/api/place/search/json?radius=1000&key=AIzaSyClmfaOWfPTif6uSc4TWMMyoyCmesXGJFw&keyword=bar&location=\(latitude),\(longitude)"
         Tool.callREST(nil, url: url, method: "GET") { (response) -> Void in
             if let json = response as? NSDictionary, barsDict = json["results"] as? [NSDictionary] {
                 var newBars:[Bar] = []
