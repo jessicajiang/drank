@@ -14,6 +14,8 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    var selectedCategory:Category?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +42,8 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let category = subscribedCategories[indexPath.row]
+        selectedCategory = category
         self.performSegueWithIdentifier("collectionPressed", sender: self)
         
     }
@@ -50,6 +54,12 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let nextViewController = segue.destinationViewController as? DrinkBrowserViewController, category = selectedCategory {
+            nextViewController.selectedCategory = category
+        }
     }
     
     @IBAction func unwind(segue:UIStoryboardSegue){

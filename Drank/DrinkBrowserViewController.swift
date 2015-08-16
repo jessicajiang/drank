@@ -14,14 +14,34 @@ class DrinkBrowserViewController: UIViewController {
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var drinkImageView: UIImageView!
     
-    var newDrink:Drink?
+    var isFavorited:Bool = false
+    
+    var selectedCategory:Category! {
+        didSet {
+            Category.getDrinkRecommendation(selectedCategory.id, completionHandler: { (drink) -> Void in
+                self.selectedDrink = drink
+            })
+        }
+    }
+    
+    var selectedDrink:Drink? {
+        didSet {
+            if let drink = selectedDrink {
+                drinkLabel.text = drink.name
+                drinkImageView.smartLoad(drink.img_url)
+            } else {
+                println("No drink")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        //drinkImageView.smartLoad(<#imgurl: String#>)
         
-        
+    
 
         // Do any additional setup after loading the view.
     }
@@ -34,14 +54,36 @@ class DrinkBrowserViewController: UIViewController {
     
     
     @IBAction func favoritePressed(sender: AnyObject) {
-        let heartImage = "BitMap"
-        //backgroundColor = UIColor.colorWithPatternImage(UIImage(named:heartImage))
+        if let drink = selectedDrink {
+            if isFavorited {
+                isFavorited = false
+                Drink.deleteFavorite(drink.id, completionHandler: { (success) -> Void in
+                    //nothing to do in completion for now
+                })
+            } else {
+                isFavorited = true
+                Drink.postFavorite(drink.id, completionHandler: { (success) -> Void in
+                    //nothing to do in completion for now
+                })
+            }
+        }
     }
     
     @IBAction func thumbsDown(sender: AnyObject) {
+        if let drink = selectedDrink {
+            Drink.putDislike(drink.id, category_id: selectedCategory.id, completionHandler: { (success) -> Void in
+                println("disliked")
+            })
+        }
     }
     
     @IBAction func thumbsUp(sender: AnyObject) {
+        if let drink = selectedDrink {
+            Drink.putLike(drink.id, category_id: selectedCategory.id, completionHandler: { (success) -> Void in
+                //nothing to do in completion for now
+                println("liked")
+            })
+        }
     }
 
     @IBAction func saveButton(sender: AnyObject) {
