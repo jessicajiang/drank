@@ -15,6 +15,7 @@ class Drink : NSObject, JSONObject {
     var ingredients:[Ingredient] = []
     var liked:Bool = false
     var disliked:Bool = false
+    var favorited:Bool = false
     
     required init(json:NSDictionary){
         self.name = json.stringValue("name")
@@ -22,6 +23,7 @@ class Drink : NSObject, JSONObject {
         self.img_url = json.stringValue("img_url")
         self.liked = json.boolValue("liked")
         self.disliked = json.boolValue("disliked")
+        self.favorited = json.boolValue("favorited")
         if let ingredientsJson = json["ingredients"] as? [NSDictionary] {
             var newIngredients:[Ingredient] = []
             for ingredientJson in ingredientsJson {
