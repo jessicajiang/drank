@@ -32,6 +32,11 @@ class SubscriptionViewController: UIViewController, UICollectionViewDelegate, UI
         let cell:CollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier("categoryCell", forIndexPath: indexPath) as! CollectionCell
         let category = categories[indexPath.row]
         cell.categoryName.text = category.name
+        if category.subscribed {
+            cell.categoryName.alpha = 0.5
+        } else {
+            
+        }
         return cell
     }
     
@@ -46,6 +51,16 @@ class SubscriptionViewController: UIViewController, UICollectionViewDelegate, UI
         })
         println("hi")
         
+    }
+    
+    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        let category = categories[indexPath.row]
+        if category.subscribed {
+            return false
+        }
+        else {
+            return true
+        }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

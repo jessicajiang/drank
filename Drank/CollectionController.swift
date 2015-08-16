@@ -10,9 +10,6 @@ import UIKit
 
 class CollectionController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    private let reuseIdentifier = "drinkCell"
-    //private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    
     var subscribedCategories:[Category] = []
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
@@ -43,6 +40,7 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("collectionPressed", sender: self)
         
     }
     
