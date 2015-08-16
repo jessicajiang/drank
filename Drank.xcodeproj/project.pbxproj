@@ -433,7 +433,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jessicajiang/Documents/FacebookSDKs-iOS-20150813",
 					"$(PROJECT_DIR)/Drank",
 				);
 				INFOPLIST_FILE = Drank/Info.plist;
@@ -452,7 +451,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jessicajiang/Documents/FacebookSDKs-iOS-20150813",
 					"$(PROJECT_DIR)/Drank",
 				);
 				INFOPLIST_FILE = Drank/Info.plist;
