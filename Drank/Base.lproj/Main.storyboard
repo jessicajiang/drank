@@ -119,7 +119,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="DjF-9s-Y7F" customClass="BarCellTableViewCell" customModule="Drank" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="barCell" rowHeight="122" id="DjF-9s-Y7F" customClass="BarCellTableViewCell" customModule="Drank" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DjF-9s-Y7F" id="bAF-cm-H6l">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -538,7 +538,7 @@
                                         <exclude reference="wng-RR-2WG"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="83" y="138" width="235" height="300"/>
                                     <mask key="constraints">
                                         <exclude reference="ESe-vX-9FS"/>
@@ -564,8 +564,7 @@
                                         <exclude reference="4hx-DH-Cvk"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="71" y="72" width="259" height="49"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="4hx-DH-Cvk"/>
                                     </mask>
@@ -848,6 +847,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="nsJ-mD-g99" secondAttribute="trailing" constant="-16" id="QWA-rH-OBB"/>
                             <constraint firstAttribute="centerX" secondItem="2LY-Kg-qDu" secondAttribute="centerX" id="SJX-US-6gE"/>
                             <constraint firstItem="AO0-FA-wzF" firstAttribute="leading" secondItem="FKP-xS-1Gu" secondAttribute="leadingMargin" constant="10" id="SJg-aJ-bTI"/>
+                            <constraint firstItem="AO0-FA-wzF" firstAttribute="top" secondItem="mod-Xb-CDc" secondAttribute="bottom" constant="60" id="WcV-wQ-mJt"/>
                             <constraint firstAttribute="centerX" secondItem="AO0-FA-wzF" secondAttribute="centerX" id="bRG-2c-AXi"/>
                             <constraint firstItem="2LY-Kg-qDu" firstAttribute="top" secondItem="b1G-Od-Hb5" secondAttribute="bottom" constant="41" id="d73-1g-tgU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mod-Xb-CDc" secondAttribute="trailing" id="fWm-ce-Z6N"/>
@@ -883,6 +883,7 @@
                                 <exclude reference="pbO-YV-fCB"/>
                                 <exclude reference="xTc-Qz-tY9"/>
                                 <exclude reference="SJg-aJ-bTI"/>
+                                <exclude reference="WcV-wQ-mJt"/>
                                 <exclude reference="bRG-2c-AXi"/>
                                 <exclude reference="gIS-cA-BAe"/>
                                 <exclude reference="sr4-sz-LMF"/>
@@ -913,6 +914,7 @@
                                 <include reference="pbO-YV-fCB"/>
                                 <include reference="xTc-Qz-tY9"/>
                                 <exclude reference="SJg-aJ-bTI"/>
+                                <include reference="WcV-wQ-mJt"/>
                                 <include reference="bRG-2c-AXi"/>
                                 <exclude reference="gIS-cA-BAe"/>
                                 <exclude reference="sr4-sz-LMF"/>
