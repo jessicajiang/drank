@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import MapKit
+import CoreLocation
 
 class Bar : NSObject, JSONObject {
     var name:String = ""
@@ -54,5 +56,14 @@ class Bar : NSObject, JSONObject {
         } else {
             return ""
         }
+    }
+    
+    func openMaps(){
+        var options:[NSObject : AnyObject] = NSDictionary() as [NSObject : AnyObject]
+        let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.latitude))
+        var pm = MKPlacemark(coordinate: location, addressDictionary: nil)
+        var mapItem = MKMapItem(placemark: pm)
+        mapItem.name = self.name
+        mapItem.openInMapsWithLaunchOptions(options)
     }
 }

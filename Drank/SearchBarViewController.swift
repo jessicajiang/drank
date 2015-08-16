@@ -65,7 +65,6 @@ class SearchBarViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension SearchBarViewController : UITableViewDelegate, UITableViewDataSource {
@@ -85,8 +84,14 @@ extension SearchBarViewController : UITableViewDelegate, UITableViewDataSource {
         return bars.count
     }
     
-    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70.0
+    }
+    
+    func tableView(tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let bar = bars[indexPath.row]
+        bar.openMaps()
     }
     
     func tableView(tableView: UITableView,
