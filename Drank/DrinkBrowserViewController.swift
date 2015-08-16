@@ -63,7 +63,7 @@ class DrinkBrowserViewController: UIViewController {
             } else {
                 isFavorited = true
                 Drink.postFavorite(drink.id, completionHandler: { (success) -> Void in
-                    //nothing to do in completion for now
+                    println("favorited")
                 })
             }
         }
