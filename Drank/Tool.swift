@@ -14,8 +14,11 @@ private let _StandardUserDefaultsInstance = NSUserDefaults.standardUserDefaults(
 private let SESSION_NAME:String = "_drank_server_session"
 //var SERVERNAME = "drank_server.192.168.4.92.xip.io"
 //var SERVER = "http://drank_server.192.168.4.92.xip.io"
-var SERVERNAME = "drank_server.192.168.1.208.xip.io"
-var SERVER = "http://drank_server.192.168.1.208.xip.io"
+//var SERVERNAME = "drank_server.192.168.1.208.xip.io"
+//var SERVER = "http://drank_server.192.168.1.208.xip.io"
+var SERVERNAME = "stark-citadel-6015.herokuapp.com"
+var SERVER = "https://stark-citadel-6015.herokuapp.com"
+
 
 class Tool {
     class var sharedInstance: Tool {
