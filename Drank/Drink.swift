@@ -129,4 +129,25 @@ class Drink : NSObject, JSONObject {
             }
         }
     }
+    
+    /**
+    In Completion
+    Returns nil if error
+    Returns array of Drink when successful
+    */
+    static func getFavoriteDrinks(completionHandler: (([Drink]?) -> Void)) {
+        let url:String = SERVER + "/drinks/favorite_list.json"
+        Tool.callREST(nil, url: url, method: "GET") { (response) -> Void in
+            if let json = response as? NSDictionary, drinks = json["drinks"] as? [NSDictionary] {
+                var newDrinks:[Drink] = []
+                for drinkJson in drinks {
+                    newDrinks.append(Drink(json: drinkJson))
+                }
+                completionHandler(newDrinks)
+            } else {
+                println("ERROR: GET FAVORITE DRINKS")
+                completionHandler(nil)
+            }
+        }
+    }
 }
