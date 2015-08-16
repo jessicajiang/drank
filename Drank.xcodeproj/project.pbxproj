@@ -12,6 +12,8 @@
 		3B0D30AB1B7F0A1B006E4FC0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D30AA1B7F0A1B006E4FC0 /* ProfileViewController.swift */; };
 		3B0D30AF1B7F0F41006E4FC0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0D30AE1B7F0F41006E4FC0 /* FBSDKCoreKit.framework */; };
 		3B0D30B21B7F20CE006E4FC0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0D30B11B7F20CE006E4FC0 /* FBSDKLoginKit.framework */; };
+		3B95933C1B7FE04900282EFA /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95933B1B7FE04900282EFA /* SubscriptionViewController.swift */; };
+		3B95933E1B7FF0CF00282EFA /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95933D1B7FF0CF00282EFA /* SearchBarViewController.swift */; };
 		3B9C7E441B7D965C00E01BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E431B7D965C00E01BA7 /* AppDelegate.swift */; };
 		3B9C7E471B7D965C00E01BA7 /* Drank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E451B7D965C00E01BA7 /* Drank.xcdatamodeld */; };
 		3B9C7E491B7D965C00E01BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9C7E481B7D965C00E01BA7 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 		3B0D30AE1B7F0F41006E4FC0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3B0D30B01B7F19C9006E4FC0 /* Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridging_Header.h; sourceTree = "<group>"; };
 		3B0D30B11B7F20CE006E4FC0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		3B95933B1B7FE04900282EFA /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		3B95933D1B7FF0CF00282EFA /* SearchBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 		3B9C7E3E1B7D965C00E01BA7 /* Drank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9C7E421B7D965C00E01BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B9C7E431B7D965C00E01BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,9 +117,11 @@
 				3BBA23EF1B7F8905004D41DF /* CollectionCell.swift */,
 				3B9C7E961B7DD22200E01BA7 /* CollectionController.swift */,
 				3B9C7E4A1B7D965C00E01BA7 /* Main.storyboard */,
+				3B95933B1B7FE04900282EFA /* SubscriptionViewController.swift */,
 				3B0D30A41B7F07B2006E4FC0 /* Extension.swift */,
 				3B9C7E9A1B7DD91D00E01BA7 /* TabBarController.swift */,
 				3B0D30AA1B7F0A1B006E4FC0 /* ProfileViewController.swift */,
+				3B95933D1B7FF0CF00282EFA /* SearchBarViewController.swift */,
 				62FD762C1B7F2FE4007950AB /* Tool.swift */,
 				62FD762E1B7F8AED007950AB /* DataObjects */,
 				3B9C7E4D1B7D965C00E01BA7 /* Images.xcassets */,
@@ -270,8 +276,10 @@
 				3B9C7E9B1B7DD91D00E01BA7 /* TabBarController.swift in Sources */,
 				3BBA23EE1B7F2B19004D41DF /* (null) in Sources */,
 				62FD76321B7F8B97007950AB /* JSONObject.swift in Sources */,
+				3B95933C1B7FE04900282EFA /* SubscriptionViewController.swift in Sources */,
 				3B0D30AB1B7F0A1B006E4FC0 /* ProfileViewController.swift in Sources */,
 				3B9C7E441B7D965C00E01BA7 /* AppDelegate.swift in Sources */,
+				3B95933E1B7FF0CF00282EFA /* SearchBarViewController.swift in Sources */,
 				3BBA23F01B7F8905004D41DF /* CollectionCell.swift in Sources */,
 				3B0D30A91B7F09EB006E4FC0 /* MostPopularViewController.swift in Sources */,
 				62FD76301B7F8B4F007950AB /* Category.swift in Sources */,
