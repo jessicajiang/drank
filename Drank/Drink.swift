@@ -12,10 +12,14 @@ class Drink : NSObject, JSONObject {
     var id:String = ""
     var name:String = ""
     var ingredients:[Ingredient] = []
+    var liked:Bool = false
+    var disliked:Bool = false
     
     required init(json:NSDictionary){
         self.name = json.stringValue("name")
         self.id = json.stringValue("id")
+        self.liked = json.boolValue("liked")
+        self.disliked = json.boolValue("disliked")
         if let ingredientsJson = json["ingredients"] as? [NSDictionary] {
             var newIngredients:[Ingredient] = []
             for ingredientJson in ingredientsJson {
