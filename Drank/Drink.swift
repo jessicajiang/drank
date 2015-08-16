@@ -91,4 +91,42 @@ class Drink : NSObject, JSONObject {
             }
         }
     }
+    
+    /**
+    In Completion
+    Returns false if error
+    Returns true if successful
+    */
+    static func postFavorite(drink_id:String, completionHandler: ((Bool) -> Void)) {
+        let url:String = SERVER + "/drinks/like.json"
+        var inputDict:NSMutableDictionary = NSMutableDictionary()
+        inputDict["drink_id"] = drink_id
+        Tool.callREST(inputDict, url: url, method: "POST") { (response) -> Void in
+            if let json = response as? NSDictionary where json.stringValue("status") == "success" {
+                completionHandler(true)
+            } else {
+                completionHandler(false)
+                println("ERROR: POST DRINKS FAVORITE")
+            }
+        }
+    }
+    
+    /**
+    In Completion
+    Returns false if error
+    Returns true if successful
+    */
+    static func deleteFavorite(drink_id:String, completionHandler: ((Bool) -> Void)) {
+        let url:String = SERVER + "/drinks/like.json"
+        var inputDict:NSMutableDictionary = NSMutableDictionary()
+        inputDict["drink_id"] = drink_id
+        Tool.callREST(inputDict, url: url, method: "DELETE") { (response) -> Void in
+            if let json = response as? NSDictionary where json.stringValue("status") == "success" {
+                completionHandler(true)
+            } else {
+                completionHandler(false)
+                println("ERROR: DELETE DRINKS FAVORITE")
+            }
+        }
+    }
 }
