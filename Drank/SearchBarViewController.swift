@@ -85,7 +85,7 @@ extension SearchBarViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 70.0
+        return 100.0
     }
     
     func tableView(tableView: UITableView,
