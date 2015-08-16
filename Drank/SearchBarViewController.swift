@@ -67,6 +67,37 @@ class SearchBarViewController: UIViewController {
 
 }
 
+extension SearchBarViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return bars.count
+    }
+    
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier(
+                "DiscussionCell",
+                forIndexPath: indexPath) as! UITableViewCell
+            
+            return cell
+    }
+}
+
 extension SearchBarViewController : CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         manager.stopUpdatingLocation()
